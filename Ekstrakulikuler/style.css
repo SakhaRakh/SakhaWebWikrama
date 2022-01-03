@@ -149,6 +149,9 @@ img{
 .Band{
     width: 345px;
 }
+h1{
+    text-align: center;
+}
 /* Responsive mobile */
 @media screen and (max-width: 576px) {
     .bar{
