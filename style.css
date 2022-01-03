@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: url(img/Gedung\ 1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+     overflow-x: hidden;
+}
+.bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    background: black;
+    padding: 6px 16px;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, .1);
+    transition: all .5s ease;
+}
+.bar.active{
+    width: 240px;
+}
+.bar .logo-content .logo{
+    display: flex;
+    color: black;
+    height: 50px;
+    width: 100%;
+    font-size: 30px;
+    margin-left: 5px;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.bar.active .logo-content .logo{
+    opacity: 1;
+}
+.bar .logo-content .logo .logo-name{
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0 10px;
+    color: white;
+}
+.bar #btn{
+    position: absolute;
+    color: #DFD3C3;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translate(-50%);
+}
+.bar.active #btn{
+    left: 85%;
+}
+.bar i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+.bar ul{
+    margin-top: 20px;
+}
+.bar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    line-height: 50px;
+}
+.bar ul li a{
+    color: #DFD3C3;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all .4s ease;
+}
+.bar ul li a:hover{
+    color: black;
+    background-color: #e7e9f5;
+}
+.bar .link-name{
+    opacity: 0;
+    pointer-events: none;
+}
+.bar.active .link-name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.bar ul li .tooltip{
+    position: absolute;
+    left: 130px;
+    top: 0;
+    transform: translate(-45% , -50%);
+    border-radius: 10px;
+    height: 35px;
+    width: 130px;
+    background: #ffffff;
+    line-height: 35px;
+    text-align: center;
+    font-size: 13px;
+    display: block;
+    color: #242424;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    pointer-events: none;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.bar.active ul li .tooltip{
+    display: none;
+}
+.bar ul li:hover .tooltip{
+    opacity: 1;
+    top: 50%;
+}
+.home-content{
+    position: absolute;
+    height: 100%;
+    width: calc(100% = 300px);
+    left: 80px;
+}
+.home-content .text{
+    font-size: 25px;
+    font-weight: 500;
+    color: #E8E1D9;
+    padding: 12px 24px;
+}
+.bar.active ~ .home-content{
+    left: 300px;
+}
+/* Judul */
+.typing{
+    color: #E8E1D9;
+    text-align: center;
+    padding: 260px;
+    transition: all .5s ease;
+}
+/* Menu Mobile */
+
+/* Responsive mobile */
+@media screen and (max-width: 576px) {
+    .bar{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .bar ul li .tooltip{
+        display: none;
+    }
+    .bar ul{
+        position: absolute;
+        height: 100vh;
+        flex-direction: column;
+        transform: translate(-18px);
+        transition: all 1s;
+        background-color: black;
+    }
+    .bar ul.nav{
+        transform: translate(-220px);
+    }
+    .home-content{
+        display: none   ;
+    }
+    .logo-name{
+        display: none;
+    }    
+    .typing h1{
+        font-size: 0;
+    }
+    .bar #btn{
+        color: black;
+        background-color: rgba(255, 255, 255, 0.692);
+        border-radius: 30%;
+    }
+}
